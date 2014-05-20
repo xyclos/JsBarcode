@@ -36,15 +36,15 @@
             var x = canvas.width / 2,
                 y = options.height;
 
-            ctx.font = options.fontSize + "px arial";
+            ctx.font = options.fontSize + "px "+ options.fontFace;
             ctx.textBaseline = "bottom";
             ctx.textAlign = 'center';
             ctx.textBaseline = 'top';
             ctx.fillText(text, x, y);
-        }
+        };
 
         //Set the width and height of the barcode
-        canvas.width = binary.length*options.width+2*options.quite;
+        canvas.width = binary.length*options.width+2*options.quiet;
         canvas.height = options.height + (options.displayValue ? options.fontSize : 0);
 
         //Paint the canvas white
@@ -55,7 +55,7 @@
         for(i=0;i<binary.length;i++){
 
             // Padding on left and right side of barcode
-            paddingX = i*options.width+options.quite;
+            paddingX = i*options.width+options.quiet;
 
             if(binary[i] == "1"){
                 ctx.fillStyle = "#000";
@@ -68,7 +68,11 @@
         }
 
         if(options.displayValue){
-            _drawBarcodeText(content);
+            if (options.displayValue === true) {
+                _drawBarcodeText(content);
+            } else {
+                _drawBarcodeText(options.displayValue);
+            }
         }
 
         //Grab the dataUri from the canvas
@@ -81,10 +85,11 @@
 
     $.fn.JsBarcode.defaults = {
         displayValue: true,
+        fontFace: 'arial',
         fontSize: 12,
         width:  2,
         height: 100,
-        quite: 10,
+        quiet: 10,
         format: "CODE128"
     };
 

@@ -18,16 +18,18 @@ $(object).JsBarcode(string,options);
 ````
 ####Where:
 *  string is the sring to be encoded to the barcode
-*  options is additional options put i an object (look below)
+*  options is additional options put in an object (look below)
 
 ####The default options:
 ````javascript
 {
-	displayValue: true,
-	width:	2,
-	height:	100,
-	quite: 10,
-	format:	"CODE128"
+	displayValue: true, //True to display the encoded string; false to hide; other values get printed
+	fontFace: 'arial', //Font face to use for the display value
+	fontSize: 12, //Font size to use for the display value    
+	width:	2, //Width of barcode lines
+	height:	100, //Height of barcode
+	quiet: 10, //Barcode quiet zone
+	format:	"CODE128" //Barcode format
 }
 ````
 
@@ -86,8 +88,10 @@ Use the [closure compiler](http://closure-compiler.appspot.com/home) with this i
 ````
 // ==ClosureCompiler==
 // @output_file_name JsBarcode.all.min.js
-// @code_url https://raw.github.com/lindell/JsBarcode/master/CODE128.js
-// @code_url https://raw.github.com/lindell/JsBarcode/master/EAN_UPC.js
-// @code_url https://raw.github.com/lindell/JsBarcode/master/JsBarcode.js
+// @code_url https://raw.github.com/hospitalrun/JsBarcode/master/CODE39.js
+// @code_url https://raw.github.com/hospitalrun/JsBarcode/master/CODE128.js
+// @code_url https://raw.github.com/hospitalrun/JsBarcode/master/EAN_UPC.js
+// @code_url https://raw.github.com/hospitalrun/JsBarcode/master/ITF14.js
+// @code_url https://raw.github.com/hospitalrun/JsBarcode/master/JsBarcode.js
 // ==/ClosureCompiler==
 ````
