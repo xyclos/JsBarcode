@@ -12,15 +12,15 @@ The plugin uses Html5Canvas to generate draw the barcodes
 
 Use
 ----
-####A Html5Canvas barcode generator is included to draw the barcodes.
+#### A Html5Canvas barcode generator is included to draw the barcodes.
 ````javascript
 $(object).JsBarcode(string,options);
 ````
-####Where:
+#### Where:
 *  string is the sring to be encoded to the barcode
 *  options is additional options put in an object (look below)
 
-####The default options:
+#### The default options:
 ````javascript
 {
 	displayValue: true, //True to display the encoded string; false to hide; other values get printed
@@ -38,7 +38,7 @@ $(object).JsBarcode(string,options);
 Examples
 ----
 
-####First we need an image
+#### First we need an image
 ````html
 <img id="barcode">
 ````
